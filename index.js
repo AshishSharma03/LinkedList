@@ -32,36 +32,55 @@ class LinkedList{
         }
 
 
-        printList(){
+        printList(size){
             var temp = this.head;
             var count = 0;
-            while(temp){
-                let ln = temp.data
-               
-                setTimeout(()=>{
-                    const k =document.createElement("li")
-                    const ssa = document.createTextNode(ln)
-                     k.appendChild(ssa)
-                    const ss= document.getElementById("Node")
-                    ss.appendChild(k)
-                }, count * 200)
-                 
+
+            for(var i=0;i<size-1;i++){
                 temp = temp.next;
-                count++
             }
-           
+                // console.log(temp.data)
+                let ln = temp.data
+        
+                    setTimeout(()=>{
+                        const k =document.createElement("li")
+                        const ssa = document.createTextNode(ln)
+                        k.appendChild(ssa)
+                        const ss= document.getElementById("Node")
+                        ss.appendChild(k)
+                    }, count * 200)
+                // }
+                    // temp = temp.next;
+                count++
+       
+        //    console.log(count)
         }
 
+        findElemnet(){
+            
+        }
 
 }
 
 
-var Ll = new LinkedList();
-Ll.Push(1)
-Ll.Push(1)
-Ll.Push(1)
 
-Ll.printList();
+
+var Ll = new LinkedList();
+
+const createNode = (prop)=>{
+    if(prop){
+        Ll.Push(prop)
+
+        console.log(Ll.size)
+        Ll.printList(Ll.size); 
+    }
+   
+}
+
+
+
+
+
 
 
 
